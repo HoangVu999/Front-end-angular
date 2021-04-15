@@ -1,0 +1,31 @@
+<di class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="card offset-6">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title">Cập nhật danh mục</h4>
+                    </div>
+                    <div class="card-body">
+                        <form [formGroup]="editForm">
+                            <div class="mb-3">
+                                <label for="" class="form-label">Tên danh mục: </label>
+                                <input type="text" class="form-control" formControlName="name">
+                                <div class="my-2" *ngIf="f.name.invalid && (f.name.dirty || f.name.touched)"
+                                     class="alert alert-danger">
+                                    <div *ngIf="f.name.errors?.required">
+                                        Không được để rỗng
+                                    </div>
+                                    <div *ngIf="f.name.errors?.minlength">
+                                        Tối thiểu 4 ký tự
+                                    </div>
+                                </div>
+                            </div>
+                            <button (click)="submitForm($event)" [disabled]="editForm.invalid" type="submit" class="btn btn-primary">Lưu</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</di>

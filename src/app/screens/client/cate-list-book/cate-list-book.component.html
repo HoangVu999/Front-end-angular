@@ -1,0 +1,15 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-4"  *ngFor="let b of cate">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" [src]="b.image" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">{{b.title}}</h5>
+                    <p class="card-text">{{b.short_desc}}</p>
+                    <a routerLink="book-detail/{{b.id}}" class="btn btn-primary">Chi tiết</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

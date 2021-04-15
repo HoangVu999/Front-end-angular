@@ -1,0 +1,64 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="row offset-9">
+                <div class="col-6">
+                    <input type="text" class="form-control"
+                           [(ngModel)]="filterObject.keyword"
+                           (keyup)="search()"
+                           placeholder="Tìm kiếm...">
+                </div>
+                <div class="col-6">
+                    <select class="form-control"
+                            (change)="search()"
+                            [(ngModel)]="filterObject.orderBy">
+                        <option *ngFor="let ord of orderData"
+                                [value]="ord.id">{{ord.name}}</option>
+                    </select>
+                </div>
+            </div>
+            <br>
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title ">Sách</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class=" text-primary">
+                                <th>#</th>
+                                <th>Tiêu đề</th>
+                                <th>Giá</th>
+                                <th>Ảnh</th>
+                                <th>Thể loại</th>
+                                <th>Tác giả</th>
+                                <th>
+                                    <a class="btn btn-success" routerLink="/admin/book/add-new/">Tạo mới</a>
+                                </th>
+                                </thead>
+                                <tbody>
+                                <tr *ngFor="let book of books; index as i">
+                                    <td>{{i+1}}</td>
+                                    <td>{{book.title | titlecase}}</td>
+                                    <td>{{book.price | currency: 'VND'}}</td>
+                                    <td>
+                                        <img [src]="book.image" alt="" width="170">
+                                    </td>
+                                    <td>{{book.category.name | titlecase}}</td>
+                                    <td>{{book.author.name}}</td>
+                                    <td>
+                                        <a class="btn btn-primary" routerLink="/admin/book/edit/{{book.id}}">Sửa</a>
+                                        <a class="btn btn-danger" (click)="remove(book.id)">Xóa</a>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

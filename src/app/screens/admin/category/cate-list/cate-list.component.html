@@ -1,0 +1,38 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title ">Thể loại</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class=" text-primary">
+                                    <th>#</th>
+                                    <th>Tên danh mục</th>
+                                    <th>Số lượng sách</th>
+                                    <th>
+                                        <a class="btn btn-success" routerLink="/admin/category/add-new/">Tạo mới</a>
+                                    </th>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let cate of cates; index as i">
+                                        <td>{{i+1}}</td>
+                                        <td>{{cate.name | titlecase}}</td>
+                                        <td>{{cate.books.length}}</td>
+                                        <td>
+                                            <a class="btn btn-primary" routerLink="/admin/category/edit/{{cate.id}}">Sửa</a>
+                                            <a class="btn btn-danger" (click)="remove(cate.id)">Xóa</a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

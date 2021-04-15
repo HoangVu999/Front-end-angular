@@ -1,0 +1,40 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title ">Danh sách tác giả</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class=" text-primary">
+                                <th>#</th>
+                                <th>Họ tên</th>
+                                <th>Số lượng sách</th>
+                                <th>
+                                    <a class="btn btn-success" routerLink="/admin/author/add-new/">Tạo mới</a>
+                                </th>
+                                </thead>
+                                <tbody>
+                                <tr *ngFor="let author of authors; index as i">
+                                    <td>{{i+1}}</td>
+                                    <td>{{author.name | titlecase}}</td>
+                                    <td>{{author.books.length}}</td>
+                                    <td>
+                                        <a class="btn btn-primary" routerLink="/admin/author/edit/{{author.id}}">Sửa</a>
+                                        <a class="btn btn-danger" (click)="remove(author.id)">Xóa</a>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

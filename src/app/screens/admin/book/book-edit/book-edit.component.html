@@ -1,0 +1,89 @@
+<di class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="card offset-6">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title">Thêm sách</h4>
+                    </div>
+                    <div class="card-body">
+                        <form [formGroup]="editForm">
+                            <div class="mb-3">
+                                <label for="" class="form-label">Tiêu đề: </label>
+                                <input type="text" class="form-control" formControlName="title">
+                                <div class="my-2" *ngIf="f.title.invalid && (f.title.dirty || f.title.touched)"
+                                     class="alert alert-danger">
+                                    <div *ngIf="f.title.errors?.required">
+                                        Không được để rỗng
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="" class="form-label">Giá: </label>
+                                <input type="number" class="form-control" formControlName="price">
+                                <div class="my-2" *ngIf="f.price.invalid && (f.price.dirty || f.price.touched)"
+                                     class="alert alert-danger">
+                                    <div *ngIf="f.price.errors?.required">
+                                        Không được để rỗng
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="" class="form-label">Mô tả ngắn: </label>
+                                <input type="text" class="form-control" formControlName="short_desc">
+                                <div class="my-2" *ngIf="f.short_desc.invalid && (f.short_desc.dirty || f.short_desc.touched)"
+                                     class="alert alert-danger">
+                                    <div *ngIf="f.short_desc.errors?.required">
+                                        Không được để rỗng
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="" class="form-label">Chi tiết: </label>
+                                <textarea formControlName="detail" class="form-control" cols="5" rows="5"></textarea>
+                                <div class="my-2" *ngIf="f.detail.invalid && (f.detail.dirty || f.detail.touched)"
+                                     class="alert alert-danger">
+                                    <div *ngIf="f.detail.errors?.required">
+                                        Không được để rỗng
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="" class="form-label">Ảnh: </label>
+                                <input type="file" id="file"
+                                       #userPhoto
+                                       (change)="onFileSelected($event)"
+                                       autocomplete="off"
+                                       class="form-control">
+                                <img [src]="image" alt="" width="250">
+                            </div>
+                            <div class="mb-3">
+                                <label for="" class="form-label">Danh mục: </label>
+                                <select class="form-control" formControlName="categoryId">
+                                    <ng-container *ngFor="let cate of cates">
+                                        <option
+                                                value="{{cate.id}}">{{cate.name | uppercase}}
+                                        </option>
+                                    </ng-container>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="" class="form-label">Tác giả: </label>
+                                <select class="form-control" formControlName="authorId">
+                                    <ng-container *ngFor="let author of authors">
+                                        <option
+                                                value="{{author.id}}">{{author.name | uppercase}}
+                                        </option>
+                                    </ng-container>
+                                </select>
+                            </div>
+                            <button (click)="submitForm($event)" [disabled]="editForm.invalid" type="submit" class="btn btn-primary">Lưu</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</di>
+
+
