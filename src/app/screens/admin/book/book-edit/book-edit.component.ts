@@ -16,7 +16,7 @@ import {Author} from '../../../../models/author';
   styleUrls: ['./book-edit.component.css']
 })
 export class BookEditComponent implements OnInit {
-  authorId: string;
+  bookId: string;
   editForm: FormGroup;
   cates: Category[] = [];
   authors: Author[] = [];
@@ -34,10 +34,9 @@ export class BookEditComponent implements OnInit {
   }
   async ngOnInit() {
     await this.route.params.subscribe(params => {
-      this.authorId = params.id
+      this.bookId = params.id
     });
-    const book = await this.bookService.findById(this.authorId).toPromise()
-      console.log(book)
+    const book = await this.bookService.findById(this.bookId).toPromise()
       this.image = book.image
       this.editForm.setValue({
         title: book.title,
@@ -48,7 +47,6 @@ export class BookEditComponent implements OnInit {
         categoryId: book.categoryId,
         authorId: book.authorId
       })
-    console.log('test')
     this.getCateList();
     this.getAuthorList();
   }
@@ -80,17 +78,16 @@ export class BookEditComponent implements OnInit {
   }
   submitForm(event) {
     event.preventDefault();
-    console.log(this.editForm.value.image)
     if (this.editForm.value.image === null) {
       this.editForm.controls['image'].setValue(this.image)
-      console.log(this.editForm.value)
     }
-    this.bookService.update(Number(this.authorId), this.editForm.value).subscribe(data => {
+    this.bookService.update(Number(this.bookId), this.editForm.value).subscribe(data => {
       if (data.id !== undefined) {
         this.router.navigate(['/admin/book']);
       }
     });
   }
+
   onFileSelected(event) {
     const n = Date.now();
     const file = event.target.files[0];
@@ -105,7 +102,6 @@ export class BookEditComponent implements OnInit {
               this.downloadURL.subscribe(url => {
                 if (url) {
                   this.editForm.controls['image'].setValue(url);
-                  console.log(this.editForm.value)
                 }
               });
             })

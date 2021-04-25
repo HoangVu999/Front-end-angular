@@ -1,21 +1,11 @@
 <div class="main-content">
     <div class="container-fluid">
         <div class="row">
-            <div class="row offset-9">
-                <div class="col-6">
-                    <input type="text" class="form-control"
-                           [(ngModel)]="filterObject.keyword"
-                           (keyup)="search()"
-                           placeholder="Tìm kiếm...">
-                </div>
-                <div class="col-6">
-                    <select class="form-control"
-                            (change)="search()"
-                            [(ngModel)]="filterObject.orderBy">
-                        <option *ngFor="let ord of orderData"
-                                [value]="ord.id">{{ord.name}}</option>
-                    </select>
-                </div>
+            <div class="col-3 offset-9">
+                <input type="text" class="form-control"
+                       [(ngModel)]="filterObject.keyword"
+                       (keyup)="search()"
+                       placeholder="Tìm kiếm...">
             </div>
             <br>
             <div class="col-md-12">

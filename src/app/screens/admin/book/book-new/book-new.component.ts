@@ -34,6 +34,7 @@ export class BookNewComponent implements OnInit {
     this.getCateList();
     this.getAuthorList();
   }
+
   createForm() {
     return new FormGroup({
       title: new FormControl('', [
@@ -62,6 +63,7 @@ export class BookNewComponent implements OnInit {
   get f() {
     return this.bookForm.controls;
   }
+
   getCateList() {
     this.cateService.getAll().subscribe(data => {
       this.cates = data;
@@ -72,6 +74,7 @@ export class BookNewComponent implements OnInit {
       this.authors = data;
     });
   }
+
   submitForm(event) {
     event.preventDefault();
     setTimeout(() => {
@@ -82,6 +85,7 @@ export class BookNewComponent implements OnInit {
       });
     }, 1500)
   }
+
   onFileSelected(event) {
     const n = Date.now();
     const file = event.target.files[0];

@@ -15,51 +15,11 @@
   ],
   "books": [
     {
-      "id": 1,
-      "title": "CẨM NANG MUA BÁN ĐẤT",
-      "price": 150000,
-      "categoryId": 1,
-      "authorId": 1,
-      "image": "https://salt.tikicdn.com/cache/w444/ts/product/44/03/b1/f797420579b8e0f5c84a1278d23053ec.jpg"
-    },
-    {
-      "id": 2,
-      "title": "Thay Đổi Cuộc Sống Với Nhân Số Học",
-      "price": 155800,
-      "categoryId": 2,
-      "authorId": 1,
-      "image": "https://salt.tikicdn.com/cache/w444/ts/product/15/11/f8/56b303e000cb42faada663569fc5d7c9.jpg"
-    },
-    {
-      "id": 3,
-      "title": "Ai Rồi Cũng Qua, Để Không Hối Hận",
-      "price": 190000,
-      "categoryId": 1,
-      "authorId": 2,
-      "image": "https://salt.tikicdn.com/cache/w444/ts/product/53/22/f7/6ccbfe3c59426c350a55e5e6ea7d86a4.png"
-    },
-    {
-      "id": 4,
-      "title": "Đừng Chạy Theo Người Khác",
-      "price": 52400,
-      "categoryId": 1,
-      "authorId": 2,
-      "image": "https://salt.tikicdn.com/cache/w444/ts/product/27/6a/36/3baa4d13a402dfdb0c0abd191c4f97d7.jpg"
-    },
-    {
-      "id": 5,
-      "title": "Sống Có Kế Hoạch",
-      "price": 99000,
-      "categoryId": 2,
-      "authorId": 2,
-      "image": "https://salt.tikicdn.com/cache/w444/ts/product/02/0a/93/03e9f498a8a23e7c0e39828cca8fc501.jpg"
-    },
-    {
-      "title": "qưertyuiop12345678",
-      "price": 123456123456789,
-      "image": "https://firebasestorage.googleapis.com/v0/b/testupload-3933e.appspot.com/o/UpLoadImages%2F1618502419523?alt=media&token=c37b42c0-81d9-4e0f-bbca-ebb5683ad324",
-      "short_desc": "sdfghjkl123456789",
-      "detail": "sdfghjkl;lqừegfhjkl123456",
+      "title": "456",
+      "price": 4456,
+      "image": "https://firebasestorage.googleapis.com/v0/b/testupload-3933e.appspot.com/o/UpLoadImages%2F1619368219505?alt=media&token=e766ba83-37d7-4a81-8a98-e758bf31a703",
+      "short_desc": "456",
+      "detail": "456",
       "categoryId": "2",
       "authorId": "2",
       "id": 6

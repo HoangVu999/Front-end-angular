@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {BookService} from '../../../../services/book.service';
 import {Book} from '../../../../models/book';
-import {ORDER_DATA} from '../../../../models/order-data';
 
 @Component({
   selector: 'app-book-list',
@@ -10,7 +9,6 @@ import {ORDER_DATA} from '../../../../models/order-data';
 })
 export class BookListComponent implements OnInit {
   books: Book[] = [];
-  orderData: any[] = ORDER_DATA;
   filterObject = {
     orderBy: '1',
     keyword: ''
@@ -19,26 +17,20 @@ export class BookListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // this.getBookList();
     this.search();
   }
+
   search() {
     this.bookService.getAll(this.filterObject).subscribe(data => {
       this.books = data;
     })
   }
-  // getBookList() {
-  //   // @ts-ignore
-  //   this.bookService.getAll().subscribe(data => {
-  //     this.books = data;
-  //   });
-  // }
 
    remove(id: any) {
     this.bookService.findById(id).subscribe(book => {
       this.bookService.removeBook(book.id).subscribe(data => {
-        this.books = this.books.filter((v) => {
-          return v.id !== id
+        this.books = this.books.filter((b) => {
+          return b.id !== id
         })
       }
       )
