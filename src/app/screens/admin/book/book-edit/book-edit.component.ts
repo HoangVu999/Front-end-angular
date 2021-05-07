@@ -33,7 +33,7 @@ export class BookEditComponent implements OnInit {
     this.editForm = this.createForm()
   }
   async ngOnInit() {
-    await this.route.params.subscribe(params => {
+    this.route.params.subscribe(params => {
       this.bookId = params.id
     });
     const book = await this.bookService.findById(this.bookId).toPromise()

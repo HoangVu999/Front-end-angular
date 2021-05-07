@@ -15,14 +15,14 @@
   ],
   "books": [
     {
-      "title": "456",
-      "price": 4456,
-      "image": "https://firebasestorage.googleapis.com/v0/b/testupload-3933e.appspot.com/o/UpLoadImages%2F1619368219505?alt=media&token=e766ba83-37d7-4a81-8a98-e758bf31a703",
-      "short_desc": "456",
-      "detail": "456",
-      "categoryId": "2",
-      "authorId": "2",
-      "id": 6
+      "title": "Sách 4",
+      "price": 1500001,
+      "image": "https://firebasestorage.googleapis.com/v0/b/testupload-3933e.appspot.com/o/UpLoadImages%2F1619404230805?alt=media&token=bd468e16-d788-4220-ba18-7fed9bc98988",
+      "short_desc": "rất hay1",
+      "detail": "ahihi1",
+      "categoryId": 2,
+      "authorId": 2,
+      "id": 8
     }
   ],
   "authors": [
